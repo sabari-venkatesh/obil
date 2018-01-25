@@ -1,0 +1,34 @@
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 $gutter-width;
+}
+
+.row {
+    margin: 0 (-$gutter-width);
+    display: flex;
+
+    &.is-vcenter {
+        align-items: center;
+    }
+
+    &.is-hcenter {
+        justify-content: center;
+    }
+}
+
+[class*="col"] {
+    padding: 0 $gutter-width;
+}
+
+.col {
+    flex: 1;
+}
+
+.col-md-4 {
+    flex: 0 0 (4*100/$grid-columns) + %;
+}
+
+.col-md-5 {
+    flex: 0 0 (5*100/$grid-columns) + %;
+}
