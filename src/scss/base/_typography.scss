@@ -1,0 +1,137 @@
+html {
+	@if $show-baseline==true {
+		$baseline-size: strip-units($base-line-height);
+		//background-image: url(http://basehold.it/i/#{$baseline-size});
+		//background-image: url('../img/baseline_21.png');
+		&:after {
+			content: "";
+			position: absolute;
+			z-index: -1;
+			top: 0;
+			height: 100%;
+			left: 50%;
+			transform: translateX(-50%);
+			width: $body-width;
+			@include baseline-grid($baseline-size);
+		}
+	}
+	font-size: $base-font-size;
+	-webkit-font-smoothing: antialiased;
+	line-height: $rhythm;
+	@media only screen and (min-width: 1824px) {
+		font-size: 24px;
+	}
+}
+
+body {
+	font-family: Roboto-Regular, Arial, Helvetica, sans-serif;
+	font-size: 1rem;
+	line-height: $rhythm;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6,
+p,
+ul,
+ol,
+pre,
+table,
+blockquote {
+	margin: 0;
+	padding: 0;
+	font-weight: normal;
+}
+
+h1 {
+	@include space(2);
+}
+
+h2 {
+	@include space(1);
+}
+
+h1,
+.h1,
+h2,
+.h2 {
+	font-family: Roboto-Light;
+}
+
+h3,
+.h3,
+h4,
+.h4,
+h5,
+.h5 {
+	font-family: Roboto-Bold;
+}
+
+h1,
+.h1 {
+	@include font-size(3);
+}
+
+h2,
+.h2 {
+	@include font-size(2);
+}
+
+h3,
+.h3 {
+	@include font-size(1);
+}
+
+h4,
+.h4 {
+	@include font-size(0);
+}
+
+h5,
+.h5 {
+	@include font-size(-1);
+}
+
+p,
+ul,
+ol,
+pre,
+table,
+blockquote {
+	@include space(1);
+}
+
+hr,
+.hr {
+	border: 1px solid;
+	margin: -1px 0;
+}
+
+sub,
+sup {
+	line-height: 0;
+	position: relative;
+	vertical-align: baseline;
+}
+
+sup {
+	top: -0.5em;
+}
+
+sub {
+	bottom: -0.25em;
+}
+
+b, strong {
+	font-weight: normal;
+	font-family: Roboto-Bold;
+}
