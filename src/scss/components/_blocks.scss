@@ -1,12 +1,14 @@
 .block__docs {
+    @include space(1);
+    border-bottom: 2px solid $color-secondary;
     ul {
         list-style: none;
-
+        @include space(0.25, margin-top);
         a {
             display: block;
             border-bottom: 1px solid #ddd;
-            @include space(0.5, padding);
-            padding-left: 0;
+            @include space(0.25, padding-top);
+            @include space(0.25, padding-bottom);
             strong {
                 display: block;
             }
@@ -16,7 +18,7 @@
 
 .block__heading {
     @extend .c-emphasize;
-    @extend .h3;
+    @extend .h4;
 }
 
 .stock__name {
@@ -24,24 +26,29 @@
 }
 
 .stock__price {
-    @include font-size(2);
+    @include font-size(3);
+    line-height: 1;
     font-family: Roboto-Bold;
 }
 
 .stock__code {
-    @include font-size(1);
+    @include font-size(2);
     color: #545454;
+    line-height: 1;
 }
 
 .stock__change {
-    @include font-size(2);
+    @include space(1, margin-top);
+    display: inline-block;
+    @include font-size(3);
+    line-height: 1;
     position: relative;
     &:after {
         content: "";
         position: absolute;
         top: 0;
-        left: 100%;
-        transform: translateY(-10%);
+        left: 105%;
+        transform: translateY(-20%);
     }
     &.is-up {
         color: $color-success;
@@ -58,36 +65,40 @@
 
 .block__graph {
     width: 3em;
-    @include space(9, height);
+    height: 100%;
     background: repeating-linear-gradient(135deg, rgba(0,0,0,.2), rgba(0,0,0,.2) 1px, transparent 2px, transparent 2px, rgba(0,0,0,.2) 3px);
     background-size: 4px 4px;
 
     position: relative;
-    &:after {
-        content: "";
-        width: 1em;
-        position: absolute;
-        bottom: 0;
-        left: 50%;
-        transform: translateX(-50%);
-        height: 1em;
-        background: $color-secondary;
-    }
-
     &.current {
 
     }
 }
 
-.graph__value {
+.graph__progress {
     position: absolute;
     text-align: center;
+    bottom: 0;
+    width: 1em;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: 1s ease;
+    height: 1%;
+    background: $color-secondary;
+    .is-current & {
+        background: $color-primary;
+    }
+}
+
+.graph__value {
+    position: absolute;
     bottom: 1em;
     left: 0;
     width: 100%;
+    text-align: center;
 }
 
-.graph_year {
+.graph__year {
     @include font-size(1);
     position: absolute;
     bottom: -2em;

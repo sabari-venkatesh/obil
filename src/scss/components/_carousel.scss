@@ -1,32 +1,37 @@
 .carousel {
-    @include space(40, width);
     position: relative;
-    margin: 0 auto;
+    @include space(22, width);
     header & {
+        @include space(40, width);
         flex: 1;
+        margin: 0 auto;
     }
-}
-
-.carousel__inner {
-
 }
 
 .carousel__slide {
-    @include space(1, margin-top);
-    @include space(1, margin-bottom);
-    background: rgba($color-brand, .8);
-    color: #fff;
-    font-family: Roboto-Bold;
-    .media__info {
-        @extend .p-2;
+    header & {
+        @include space(1, margin-top);
+        @include space(1, margin-bottom);
+        background: rgba($color-brand, .8);
+        color: #fff;
+        font-family: Roboto-Bold;
+        .media__img {
+            @include space(13, max-height);
+        }
+        .media__info {
+            @extend .p-2;
+            div {
+                @include font-size(2);
+            }
+        }
     }
 }
 
-.carousel__nav {
+.carousel__pager {
     position: absolute;
     width: 100%;
-    @include space(14, top);
     left: 0;
+    bottom: 0;
     text-align: center;
     z-index: 100;
     list-style: none;
@@ -45,4 +50,38 @@
         }
     }
 
+    #section__investors & {
+        display: none;
+    }
+}
+
+.carousel__nav {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    z-index: 10;
+    border: 0;
+    border-left: 2px solid #fff;
+    border-top: 2px solid #fff;
+    @include space(.75, width);
+    @include space(.75, height);
+    display: inline-block;
+    header & {
+        display: none;
+    }
+    &.is-prev {
+        left: 1.5em;
+        transform: translateY(-50%) rotate(-45deg);
+        #section__investors & {
+            left: 10%;
+        }
+    }
+
+    &.is-next {
+        right: 1.5em;
+        transform: translateY(-50%) rotate(135deg);
+        #section__investors & {
+            right: 10%;
+        }
+    }
 }

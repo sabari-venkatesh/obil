@@ -1,5 +1,29 @@
-.group {
+.clearfix {
 	@include clearfix;
+}
+
+.is-vcenter {
+	align-items: center;
+}
+
+.is-hcenter {
+	justify-content: center;
+}
+
+.is-spaced-between {
+	justify-content: space-between;
+}
+
+.is-spaced-around {
+	justify-content: space-around;
+}
+
+.d-flex {
+	display: flex;
+	flex-direction: row;
+
+	@extend .is-vcenter;
+	@extend .is-hcenter;
 }
 
 .img--responsive {

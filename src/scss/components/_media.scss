@@ -1,7 +1,9 @@
 .media {
-    display: flex;
-    flex-direction: row;
-    align-items: flex-start;
+    &:not(.is-overlay) {
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+    }
 
     &.is-vcenter {
         align-items: center;
@@ -9,6 +11,10 @@
 
     &.is-hcenter {
         justify-content: center;
+    }
+
+    &.is-overlay {
+        position: relative;
     }
 }
 
@@ -23,4 +29,20 @@
 .media__info {
     padding-left: 1em;
     flex: 1;
+    p {
+        margin: 0;
+    }
+    .is-overlay & {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        background: rgba(0,0,0,0.75);
+        color: #fff;
+        @extend .p-1;
+    }
+}
+
+.media__img {
+    display: block;
 }

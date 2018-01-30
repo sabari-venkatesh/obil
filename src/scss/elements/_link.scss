@@ -7,6 +7,26 @@
 	}
 }
 
+.link--more {
+	@include font-size(1);
+	position: relative;
+	padding-left: 2.5em;
+	&:before {
+		content: "+";
+		position: absolute;
+		left: 0;
+		top: 50%;
+		transform: translateY(-50%);
+		width: 1em;
+		height: 1em;
+		border-radius: 50%;
+		border: 1px solid #fff;
+		font-size: 2em;
+		line-height: 1;
+		text-align: center;
+	}
+}
+
 .link--bordered {
 	border: 2px solid #fff;
 	@include space(0.25, padding);
