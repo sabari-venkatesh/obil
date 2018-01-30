@@ -1,4 +1,4 @@
-# Webpack starter kit
+# Webpack - OBIL
 
 Build set-up based on webpack and npm scripts for common needs.
 
