@@ -8,6 +8,8 @@ import postcssImport from 'postcss-import';
 import postcssExtend from 'postcss-extend';
 import postcssReporter from 'postcss-reporter';
 import StyleLintPlugin from 'stylelint-webpack-plugin';
+import CopyWebpackPlugin from 'copy-webpack-plugin';
+import ImageminPlugin from 'imagemin-webpack-plugin';
 
 const extractStyles = new ExtractTextPlugin({ filename: 'css/[name].css' });
 
@@ -188,6 +190,10 @@ module.exports = env => {
       new HtmlWebpackPlugin({
         template: 'pug/index.pug'
       }),
+
+      new CopyWebpackPlugin([
+          {from:'img', to:'images'}
+      ]),
 
       extractStyles,
 
