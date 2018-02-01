@@ -188,7 +188,12 @@ module.exports = env => {
       }),
 
       new HtmlWebpackPlugin({
-        template: 'pug/index.pug'
+          template: 'index.html'
+      }),
+
+      new HtmlWebpackPlugin({
+        filename: 'investors.html',
+        template: 'investors.html'
       }),
 
       new CopyWebpackPlugin([

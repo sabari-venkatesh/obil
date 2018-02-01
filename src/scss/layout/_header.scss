@@ -4,6 +4,10 @@ header {
 	min-height: 100vh;
     position: relative;
     overflow: hidden;
+
+	> .container {
+		flex: 1;
+	}
 }
 
 .banner__overlay {

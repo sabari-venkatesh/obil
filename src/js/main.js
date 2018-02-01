@@ -1,3 +1,5 @@
+import bgFooter from '../img/bg_footer.jpg';
+
 import Siema from 'siema';
 
 let currentSlide = 0,
@@ -55,7 +57,7 @@ for (let i=0;i<carouselWrapperLength;i++) {
     carouselPrev.onclick = () => {
         carousels[i].prev();
     }
-    
+
     let totalSlides = carouselWrapper[i].querySelectorAll('.carousel__slide').length;
 
     for (var index=0; index<totalSlides; index++) {

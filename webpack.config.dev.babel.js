@@ -158,7 +158,12 @@ module.exports = env => {
       }),
 
       new HtmlWebpackPlugin({
-        template: 'index.html'
+          template: 'index.html'
+      }),
+
+      new HtmlWebpackPlugin({
+        filename: 'investors.html',
+        template: 'investors.html'
       }),
 
       new CopyWebpackPlugin([

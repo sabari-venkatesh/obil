@@ -21,7 +21,6 @@
 .d-flex {
 	display: flex;
 	flex-direction: row;
-
 	@extend .is-vcenter;
 	@extend .is-hcenter;
 }
@@ -59,18 +58,23 @@
 	text-transform: uppercase;
 }
 
-.p-1 {
-	@include space(.5, padding);
-}
+@each $prop, $abbr in (margin: m, padding: p) {
 
-.p-2 {
-	@include space(1, padding);
-}
-
-.p-3 {
-	@include space(1.5, padding);
-}
-
-.p-4 {
-	@include space(2, padding);
+	@for $spacer from 0 through $spacers {
+		.#{$abbr}-#{$spacer} {
+			@include space($spacer/2, #{$prop});
+		}
+		.#{$abbr}t-#{$spacer} {
+			@include space($spacer/2, #{$prop}-top);
+		}
+		.#{$abbr}l-#{$spacer} {
+			@include space($spacer/2, #{$prop}-left);
+		}
+		.#{$abbr}r-#{$spacer} {
+			@include space($spacer/2, #{$prop}-right);
+		}
+		.#{$abbr}b-#{$spacer} {
+			@include space($spacer/2, #{$prop}-bottom);
+		}
+	}
 }

@@ -7,6 +7,7 @@
 .row {
     margin: 0 (-$gutter-width);
     display: flex;
+    flex-wrap: wrap;
 
     &.is-vcenter {
         align-items: center;
@@ -25,18 +26,9 @@
     flex: 1;
 }
 
-.col-md-4 {
-    flex: 0 0 (4*100/$grid-columns) + %;
-}
-
-.col-md-5 {
-    flex: 0 0 (5*100/$grid-columns) + %;
-}
-
-.col-md-6 {
-    flex: 0 0 (6*100/$grid-columns) + %;
-}
-
-.col-md-7 {
-    flex: 0 0 (7*100/$grid-columns) + %;
+$class-slug: col-md;
+@for $i from 1 through $grid-columns {
+    .#{$class-slug}-#{$i} {
+        flex: 0 0 percentage($i / $grid-columns);
+    }
 }

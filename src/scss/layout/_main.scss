@@ -18,13 +18,13 @@
 }
 
 #section__contact {
-	background: #444;
+	background: #444 url('../images/bg_footer.jpg');
 	color: #fff;
 }
 
 #section__location {
 	position: relative;
-	padding: 0; 
+	padding: 0;
 	.block__locations {
 		position: absolute;
 		@include space(2, top);
@@ -33,4 +33,9 @@
 		@include space(1, padding);
 		min-width: 30em;
 	}
+}
+
+.contact {
+	background: $color-primary;
+	color: #fff;
 }
