@@ -1,0 +1,36 @@
+$grid-breakpoints: (
+    xs: 0,
+    sm: 576px,
+    md: 768px,
+    lg: 992px,
+    xl: 1200px
+);
+
+$container-max-widths: (
+  sm: 540px,
+  md: 720px,
+  lg: 960px,
+  xl: 1170px
+);
+
+$font-family-sans-serif: "Roboto", "Helvetica Neue", Arial, sans-serif;
+
+$secondary: #e14c48;
+$primary: #434456;
+
+$theme-colors: (
+  "primary": $primary,
+  "secondary": $secondary
+);
+
+$list-group-item-padding-y:.5rem !default;
+$list-group-item-padding-x: 0;
+$btn-border-radius: 0;
+$btn-border-radius-lg: 0;
+$input-border-radius: 0;
+
+$input-bg: #5c5c5c;
+$input-focus-bg: #fff;
+$input-color: #fff;
+$input-focus-color: #222;
+$input-placeholder-color: #999;

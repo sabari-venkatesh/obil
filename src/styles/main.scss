@@ -1,0 +1,289 @@
+@import "./vars";
+
+@import "~bootstrap/scss/bootstrap";
+
+h1, h2, h3, h4, .h1, .h2, .h3, .h4 {
+    font-weight: 300;
+}
+
+.nav-item {
+    &.active {
+        .nav-link {
+            border-bottom: 3px solid $secondary;
+        }
+    }
+}
+
+.carousel-item {
+    display: block;
+
+    header & {
+        @include media-breakpoint-down(lg) {
+            min-height: 300px;
+        }
+    }
+}
+
+.carousel-pager {
+    position: absolute;
+    width: 100%;
+    left: 0;
+    bottom: 0;
+    text-align: center;
+    z-index: 100;
+    list-style: none;
+
+    > li {
+        background: #fff;
+        display: inline-block;
+        width: 1em;
+        height: 1em;
+        margin: 0 .5em;
+        border-radius: 50%;
+        cursor: pointer;
+
+        &.active {
+            background: $secondary;
+        }
+    }
+
+    #section__investors & {
+        display: none;
+    }
+}
+
+.carousel-nav {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    z-index: 10;
+    border: 0;
+    border-left: 2px solid #fff;
+    border-top: 2px solid #fff;
+    width: 1em;
+    height: 1em;
+    display: inline-block;
+    background: none;
+    header & {
+        display: none;
+    }
+    &.is-prev {
+        left: 1.5em;
+        transform: translateY(-50%) rotate(-45deg);
+        #section__investors & {
+            left: 10%;
+        }
+    }
+
+    &.is-next {
+        right: 1.5em;
+        transform: translateY(-50%) rotate(135deg);
+        #section__investors & {
+            right: 10%;
+        }
+    }
+}
+
+.carousel-wrapper {
+    flex: 1;
+    width: 960px;
+    @include media-breakpoint-down(lg) {
+         width: 100%;
+    }
+}
+
+.carousel-caption {
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba($black, 0.75);
+    @extend .pb-0;
+}
+
+.btn-outline-light {
+    white-space: normal;
+    width: 100%;
+    @include media-breakpoint-up(lg) {
+        max-width: 10em;
+    }
+}
+
+.link-more {
+    position: relative;
+    font-size: 2rem;
+    font-weight: 300;
+	padding-left: 2.5em;
+    @extend .text-white;
+	&:before {
+		content: "+";
+		position: absolute;
+		left: 0;
+		top: 50%;
+		transform: translateY(-50%);
+		width: 1em;
+		height: 1em;
+		border-radius: 50%;
+		border: 1px solid #fff;
+		font-size: 2em;
+		line-height: 1;
+		text-align: center;
+	}
+}
+
+header[role="banner"] {
+    position: relative;
+    overflow: hidden;
+    @include media-breakpoint-up(xl) {
+        height: 100vh;
+    }
+
+    &:after {
+        content: "";
+        background: url('../images/bg-overlay.png') no-repeat 0 0;
+        position: absolute;
+        width: 100%;
+        left: 0;
+        top: 0;
+        height: 100%;
+        z-index: -1;
+    }
+
+    .slide {
+        .carousel-item {
+            background: rgba($secondary, 0.8);
+        }
+        .link-more {
+            position: absolute;
+            bottom: 1em;
+        }
+
+        .lead {
+            font-size: 2em;
+            font-weight: 700;
+        }
+    }
+}
+
+#carousel-header {
+    min-height: 350px;
+}
+
+.banner__video {
+    position: absolute;
+    z-index: 1;
+    top: 50%;
+    left: 50%;
+    z-index: -2;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    transform: translate(-50%, -50%);
+}
+
+.preface {
+     .certificates {
+        @include media-breakpoint-up(xl) {
+            border-left: 1px solid #aaa;
+        }
+    }
+}
+
+.section {
+    position: relative;
+    .carousel-inner {
+        @extend .text-center;
+    }
+}
+
+.stock__change {
+    display: inline-block;
+    line-height: 1;
+    position: relative;
+    &:after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 105%;
+        transform: translateY(-20%);
+    }
+    &.is-up {
+        color: $success;
+
+        &:after {
+            border-width: .5em;
+            border-style: solid;
+            border-left-color: transparent;
+            border-right-color: transparent;
+            border-top-color: transparent;
+        }
+    }
+}
+
+.block__graph {
+    width: 3em;
+    min-height: 10rem;
+    height: 100%;
+    background: repeating-linear-gradient(135deg, rgba(0,0,0,.2), rgba(0,0,0,.2) 1px, transparent 2px, transparent 2px, rgba(0,0,0,.2) 3px);
+    background-size: 4px 4px;
+
+    position: relative;
+    &.current {
+
+    }
+}
+
+.graph__progress {
+    position: absolute;
+    text-align: center;
+    bottom: 0;
+    width: 1em;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: 1s ease;
+    height: 1%;
+    background: $secondary;
+    .is-current & {
+        background: $primary;
+    }
+}
+
+.graph__value {
+    position: absolute;
+    bottom: 1em;
+    left: 0;
+    width: 100%;
+    text-align: center;
+}
+
+.graph__year {
+    position: absolute;
+    bottom: -2em;
+    right: 0;
+}
+
+#section__services {
+    background: #525777;
+}
+
+.address {
+    position: absolute;
+    width: 20em;
+    top: 3em;
+    left: 3em;
+    background: $white;
+}
+
+#section__events {
+    background: #cf5152;
+}
+
+#section__contact {
+    background: url('../images/bg_footer.jpg') no-repeat 0 0;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.footer {
+    background: #000;
+}
