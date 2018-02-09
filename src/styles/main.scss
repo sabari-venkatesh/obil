@@ -19,7 +19,7 @@ h1, h2, h3, h4, .h1, .h2, .h3, .h4 {
 
     header & {
         @include media-breakpoint-down(lg) {
-            min-height: 300px;
+            //min-height: 300px;
         }
     }
 }
@@ -148,6 +148,10 @@ header[role="banner"] {
         z-index: -1;
     }
 
+    > .container {
+        height: 100vh;
+    }
+
     .slide {
         .carousel-item {
             background: rgba($secondary, 0.8);
@@ -165,7 +169,11 @@ header[role="banner"] {
 }
 
 #carousel-header {
-    min-height: 350px;
+    min-height: 300px;
+
+    @include media-breakpoint-up(xl) {
+        min-height: 350px;
+    }
 }
 
 .banner__video {
@@ -274,6 +282,10 @@ header[role="banner"] {
     background: $white;
 }
 
+.contact {
+    background: #cf5152;
+}
+
 #section__events {
     background: #cf5152;
 }
@@ -286,4 +298,8 @@ header[role="banner"] {
 
 .footer {
     background: #000;
+}
+
+.breadcrumb {
+    padding-left: 0;
 }
