@@ -3,6 +3,7 @@ import path from 'path';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 import ExtractTextPlugin from 'extract-text-webpack-plugin';
 import autoprefixer from 'autoprefixer';
+import CopyWebpackPlugin from 'copy-webpack-plugin';
 
 const extractSass = new ExtractTextPlugin({
     filename: "css/[name].[contenthash].css",
@@ -105,12 +106,21 @@ module.exports = {
             template: 'investors.html', //Name of template in ./src
             hash: true,
         }),
+        new HtmlWebpackPlugin({
+            filename: 'services.html', //Name of file in ./dist/
+            template: 'services.html', //Name of template in ./src
+            hash: true,
+        }),
         new webpack.ProvidePlugin({ // inject ES5 modules as global vars
             $: 'jquery',
             jQuery: 'jquery',
             'window.jQuery': 'jquery',
             Tether: 'tether',
             Popper: ['popper.js', 'default'],
-        })
+        }),
+        new CopyWebpackPlugin([{
+            from: 'pdf',
+            to: 'pdf'
+        }])
     ]
 }

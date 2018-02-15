@@ -13,7 +13,16 @@ h1, h2, h3, h4, .h1, .h2, .h3, .h4 {
         }
     }
 }
-
+.custom-toggler.navbar-toggler {
+  border-color: rgb(15, 14, 15);
+  background-color: rgb(232, 229, 232);
+}
+.navbar-toggler-icon.custom-toggler-icon{
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(0,0,0,1)' stroke-width='1' stroke-linecap='round' stroke-miterlimit='15' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+}
+#heading {
+  color:white;
+}
 .carousel-item {
     display: block;
 
@@ -107,6 +116,30 @@ h1, h2, h3, h4, .h1, .h2, .h3, .h4 {
         max-width: 10em;
     }
 }
+#section__study {
+    background: white;
+    text-indent: 50px;
+    font-size: 150%;
+    color:rgb(70, 70, 70);
+    text-align: center;
+}
+
+#section__description {
+    background-color:rgb(50, 50, 50);
+    color: rgb(200, 200, 200);;
+    line-height: 2.5;
+    text-align: center;
+}
+#section_instruments_and_machinaries {
+    background: white;
+}
+#section_circle {
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+  margin: 0 auto;
+  background-color: rgb(225,76,72);
+}
 
 .link-more {
     position: relative;
@@ -146,6 +179,9 @@ header[role="banner"] {
         top: 0;
         height: 100%;
         z-index: -1;
+        #page__services & {
+            filter: brightness(30%);
+        }
     }
 
     > .container {
@@ -188,6 +224,19 @@ header[role="banner"] {
     height: auto;
     transform: translate(-50%, -50%);
 }
+.banner__img {
+  position: absolute;
+  z-index: 1;
+  top: 50%;
+  left: 50%;
+  z-index: -2;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  transform: translate(-50%, -50%);
+}
+
 
 .preface {
      .certificates {
