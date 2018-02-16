@@ -8,7 +8,7 @@ h1, h2, h3, h4, .h1, .h2, .h3, .h4 {
 
 .nav-item {
     &.active {
-        .nav-link {
+        > .nav-link {
             border-bottom: 3px solid $secondary;
         }
     }
@@ -179,7 +179,7 @@ header[role="banner"] {
         top: 0;
         height: 100%;
         z-index: -1;
-        #page__services & {
+        .inner & {
             filter: brightness(30%);
         }
     }

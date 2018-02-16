@@ -111,6 +111,26 @@ module.exports = {
             template: 'services.html', //Name of template in ./src
             hash: true,
         }),
+        new HtmlWebpackPlugin({
+            filename: 'food-processing.html', //Name of file in ./dist/
+            template: 'food-processing.html', //Name of template in ./src
+            hash: true,
+        }),
+        new HtmlWebpackPlugin({
+            filename: 'hatchery.html', //Name of file in ./dist/
+            template: 'hatchery.html', //Name of template in ./src
+            hash: true,
+        }),
+        new HtmlWebpackPlugin({
+            filename: 'analytical.html', //Name of file in ./dist/
+            template: 'analytical.html', //Name of template in ./src
+            hash: true,
+        }),
+        new HtmlWebpackPlugin({
+            filename: 'molecular-laboratory.html', //Name of file in ./dist/
+            template: 'molecular-laboratory.html', //Name of template in ./src
+            hash: true,
+        }),
         new webpack.ProvidePlugin({ // inject ES5 modules as global vars
             $: 'jquery',
             jQuery: 'jquery',
